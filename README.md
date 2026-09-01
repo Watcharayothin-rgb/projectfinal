@@ -85,23 +85,10 @@
 - Mobile (< 768px): 
   - สลับระบบ Header Menu เป็น Mobile Drawer (เมนูแฮมเบอร์เกอร์)
   - ปรับการจัดวางทุกส่วนเป็น Single Column อักษรไม่ล้นขอบภาพ ไม่ซ้อนทับ
-- **หลักฐานการทดสอบ (Testing Evidence Assets)**:
-  - ภาพถ่ายหน้าจอการทดสอบบน Desktop & Mobile รวมถึงการทดสอบระบบ Interaction ทั้งหมดจัดเก็บอยู่ในโฟลเดอร์ `images/testing/` ในโปรเจกต์ (ได้แก่ภาพทดสอบ Desktop, Mobile Drawer, Pop-up Modal, FAQ Accordion, Contact Validation, Admin System และวิดีโอบันทึกการทดสอบ `website_verification_flow.webp`)
 
 ---
 
-9. AI Usage Report (การใช้ AI อย่างโปร่งใส)
-- เครื่องมือที่ใช้: Google Gemini AI (ผ่าน Antigravity AI Assistant)
-- ขั้นตอนการนำมาใช้:
-  1. การสร้างภาพประกอบ (Asset Generation): ใช้ Prompt สร้างภาพ 3D Render กล่องกางเกงในริบบิ้นฟ้า (`hero-box.jpg`) และภาพถ่ายกล่องกางเกงใน (`hands-box.jpg`) ให้ได้สไตล์ตรงกับ Figma
-  2. วางโครงสร้างโค้ด (Architecture): ช่วยร่างโครงสร้าง HTML5 Semantic, CSS Variables และโครงร่าง JavaScript ES6
-  3. การตรวจสอบและแก้ไข (Debug & QA): ให้ AI ช่วยตรวจสอบและแก้ไขปัญหาระยะห่าง Margin/Padding ใน Footer และการเขียน Form Validation
-- ตัวอย่าง Prompt: `"สร้างภาพ 3D render ของกล่องกางเกงในสีดำผูกริบบิ้นสีฟ้า บนพื้นหลังสีน้ำเงินเข้ม"`
-- การตรวจสอบผลลัพธ์: ผู้พัฒนาได้ทำการเปิดทดสอบด้วยตนเองผ่าน Browser DevTools และปรับแต่งโค้ดจนทำงานถูกต้อง 100%
-
----
-
-10. Deployment (ขั้นตอนการนำขึ้น Hosting)
+9. Deployment (ขั้นตอนการนำขึ้น Hosting)
 - แพลตฟอร์มที่ใช้: Vercel Cloud Platform
 - Live URL: `https://projectfinal-gules.vercel.app`
 - ขั้นตอนการ Deploy:
@@ -111,14 +98,14 @@
 
 ---
 
-11. Challenges & สิ่งที่ได้เรียนรู้ (ปัญหาและแนวทางแก้ไข)
+10. Challenges & สิ่งที่ได้เรียนรู้ (ปัญหาและแนวทางแก้ไข)
 - ปัญหาที่พบ: การจัดตำแหน่งส่วน Footer ให้ตรงตามสัดส่วน Figma บนหน้าจอที่มีความกว้างต่างกัน
 - แนวทางแก้ไข: ใช้ Flexbox ร่วมกับ `max-width` และ `margin: 0 auto` เพื่อล็อกระยะห่างกึ่งกลางของโลโก้ เส้นกั้นแนวตั้ง และรายการเมนู
 - สิ่งที่ได้เรียนรู้: กระบวนการถอดดีไซน์จาก Figma สู่โค้ดจริง (Figma to Code Workflow), การจัดการ State ใน JavaScript ด้วย `localStorage`, และการปรับแต่ง Responsive Web Design
 
 ---
 
-12. Author (ผู้จัดทำโครงการ)
+11. Author (ผู้จัดทำโครงการ)
 - ชื่อ-นามสกุล: วัชระโยธิน ทิศลูน
 - รหัสนักศึกษา: 68319100073
 - สาขาวิชา: เทคโนโลยีธุรกิจดิจิทัล
