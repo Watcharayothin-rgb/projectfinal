@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="40" height="40">
+  <g transform="translate(10, 10)">
+    <!-- Top-Left Pink/Red -->
+    <rect x="12" y="5" width="18" height="34" rx="9" fill="#E01E5A" />
+    <circle cx="21" cy="46" r="9" fill="#E01E5A" />
+    
+    <!-- Top-Right Blue -->
+    <rect x="41" y="12" width="34" height="18" rx="9" fill="#36C5F0" />
+    <circle cx="34" cy="21" r="9" fill="#36C5F0" />
+    
+    <!-- Bottom-Right Green -->
+    <rect x="50" y="41" width="18" height="34" rx="9" fill="#2EB67D" />
+    <circle cx="59" cy="34" r="9" fill="#2EB67D" />
+    
+    <!-- Bottom-Left Yellow -->
+    <rect x="5" y="50" width="34" height="18" rx="9" fill="#ECB22E" />
+    <circle cx="46" cy="59" r="9" fill="#ECB22E" />
+  </g>
+</svg>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หน้าแรก - โครงการแจกกางเกงในฟรี เพื่อคนไทยทุกคน</title>
+  <meta name="description" content="โครงการแจกกางเกงในฟรี คุณภาพดี เพื่อส่งต่อสิ่งดีๆ ให้กับคนไทยทุกคน ไม่มีค่าใช้จ่ายใดๆ ทั้งสิ้น">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. HEADER & NAVBAR
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <img src="images/logo.svg" alt="โลโก้โครงการ">
+        <div>
+          <span>แจกกางเกงในฟรี</span>
+          <span class="brand-text-sub">เพื่อส่งต่อสิ่งดีๆ ให้กับคนไทยทุกคน</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link active">หน้าแรก</a></li>
+        <li><a href="about.html" class="nav-link">เกี่ยวกับเรา</a></li>
+        <li><a href="how-it-works.html" class="nav-link">วิธีรับของฟรี</a></li>
+        <li><a href="faq.html" class="nav-link">คำถามที่พบบ่อย</a></li>
+        <li><a href="contact.html" class="nav-link">ติดต่อเรา</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button class="btn-primary btn-claim-modal" id="headerClaimBtn">รับของฟรี</button>
+      </div>
+
+      <!-- Mobile Hamburger Toggle -->
+      <button class="mobile-toggle" id="mobileToggle" aria-label="เปิดเมนู">&#9776;</button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html" class="nav-link active">หน้าแรก</a>
+    <a href="about.html" class="nav-link">เกี่ยวกับเรา</a>
+    <a href="how-it-works.html" class="nav-link">วิธีรับของฟรี</a>
+    <a href="faq.html" class="nav-link">คำถามที่พบบ่อย</a>
+    <a href="contact.html" class="nav-link">ติดต่อเรา</a>
+    <a href="admin.html" class="nav-link">ระบบหลังบ้าน</a>
+    <button class="btn-primary btn-claim-modal" style="width: 100%; margin-top: 16px;">รับของฟรี</button>
+  </div>
+
+  <!-- ==========================================================================
+       2. HERO SECTION
+       ========================================================================== -->
+  <section class="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1 class="hero-title">
+          กางเกงในฟรี<br>
+          <span>เพื่อคนไทยทุกคน</span>
+        </h1>
+        <p class="hero-desc">
+          เราต้องการมอบสิ่งดีๆ ให้กับทุกคน บริการกางเกงในคุณภาพฟรี ไม่มีค่าใช้จ่าย
+        </p>
+        <div class="hero-cta">
+          <button class="btn-primary btn-hero btn-claim-modal" id="heroClaimBtn">
+            <span>🎁</span> รับของฟรีเลย
+          </button>
+        </div>
+      </div>
+      <div class="hero-image-wrapper">
+        <img src="images/hero-box.jpg" alt="กล่องกางเกงในฟรีคุณภาพดี">
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       3. 4 FEATURE PILLARS BAR
+       ========================================================================== -->
+  <section class="features-bar">
+    <div class="container features-grid">
+      
+      <!-- Pillar 1 -->
+      <div class="feature-item">
+        <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M4 6h16v4s-2 1-4 1-4-2-4-2-2 2-4 2-4-1-4-1V6z"/>
+          <path d="M4 10c0 5 4 9 8 9s8-4 8-9"/>
+        </svg>
+        <h3 class="feature-title">ฟรี 100%</h3>
+        <p class="feature-text">ไม่มีค่าใช้จ่ายใตๆ ทั้งสิ้น</p>
+      </div>
+
+      <!-- Pillar 2 -->
+      <div class="feature-item">
+        <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="m9 12 2 2 4-4"/>
+        </svg>
+        <h3 class="feature-title">ปลอดภัย</h3>
+        <p class="feature-text">ข้อมูลของคุณปลอดภัย 100%</p>
+      </div>
+
+      <!-- Pillar 3 -->
+      <div class="feature-item">
+        <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <circle cx="12" cy="8" r="6"/>
+          <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
+        </svg>
+        <h3 class="feature-title">คุณภาพดี</h3>
+        <p class="feature-text">สินค้าคุณภาพดีได้มาตรฐาน</p>
+      </div>
+
+      <!-- Pillar 4 -->
+      <div class="feature-item">
+        <svg class="feature-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+          <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+        </svg>
+        <h3 class="feature-title">ช่วยเหลือสังคม</h3>
+        <p class="feature-text">ส่งต่อสิ่งดีๆ คืนสู่สังคม</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       4. ABOUT TEASER SECTION
+       ========================================================================== -->
+  <section class="about-teaser">
+    <div class="container about-grid">
+      <div class="about-teaser-content">
+        <h2 class="section-title">ทำไมเราถึงแจกฟรี?</h2>
+        <p class="section-subtitle">
+          เพราะเราเชื่อว่าการแบ่งปันเล็กๆ น้อยๆ สามารถสร้างรอยยิ้มและกำลังใจให้ใครหลายคน
+        </p>
+        <a href="about.html" class="btn-secondary" id="readMoreBtn">อ่านเพิ่มเติมเกี่ยวกับเรา</a>
+      </div>
+      <div class="about-teaser-img">
+        <img src="images/hands-box.jpg" alt="การมอบกล่องกางเกงในเพื่อสังคม">
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       5. NEWSLETTER BANNER
+       ========================================================================== -->
+  <section class="newsletter-bar">
+    <div class="container newsletter-flex">
+      <div class="newsletter-info">
+        <div class="newsletter-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <div class="newsletter-text">
+          <h3>อย่าพลาดสิทธิ์รับของฟรี!</h3>
+          <p>ลงทะเบียนไว้ แล้วเราจะแจ้งเตือนเมื่อมีของพร้อมส่ง</p>
+        </div>
+      </div>
+      <form class="newsletter-form" id="homeNewsletterForm">
+        <input type="email" class="newsletter-input" placeholder="กรอกอีเมลของคุณ" required>
+        <button type="submit" class="newsletter-btn">สมัครเลย</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       6. GLOBAL FOOTER
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo-stacked">
+            <img src="images/logo.svg" alt="โลโก้โครงการ">
+            <div class="brand-stacked-text">
+              <span class="brand-main">โครงการแจกกางเกงในฟรี</span>
+              <span class="brand-sub">เพื่อส่งต่อสิ่งดีๆ ให้กับสังคมไทย</span>
+            </div>
+          </a>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="footer-nav">
+          <h4>เมนู</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">หน้าแรก</a></li>
+            <li><a href="about.html">เกี่ยวกับเรา</a></li>
+            <li><a href="how-it-works.html">วิธีรับของฟรี</a></li>
+            <li><a href="faq.html">คำถามที่พบบ่อย</a></li>
+            <li><a href="contact.html">ติดต่อเรา</a></li>
+            <li><a href="admin.html">ระบบหลังบ้าน</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 โครงการแจกกางเกงในฟรีเพื่อคนไทยทุกคน. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       7. REGISTRATION MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="registrationModal">
+    <div class="modal-card">
+      <button class="modal-close" id="modalCloseBtn">&times;</button>
+      <h3 class="modal-title">ลงทะเบียนรับของฟรี</h3>
+      <p class="modal-subtitle">กรอกข้อมูลให้ครบถ้วนเพื่อยืนยันสิทธิ์ในการรับกางเกงในฟรี</p>
+
+      <form id="claimForm">
+        <div class="form-group">
+          <label for="claimName">ชื่อ-นามสกุล *</label>
+          <input type="text" id="claimName" class="form-control" placeholder="เช่น นายสมชาย ใจดี" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="claimPhone">เบอร์โทรศัพท์ *</label>
+            <input type="tel" id="claimPhone" class="form-control" placeholder="0812345678" required>
+          </div>
+          <div class="form-group">
+            <label for="claimEmail">อีเมล (ถ้ามี)</label>
+            <input type="email" id="claimEmail" class="form-control" placeholder="example@email.com">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>เลือกไซส์กางเกงใน *</label>
+          <div class="size-selector">
+            <div class="size-option">
+              <input type="radio" name="size" id="sizeS" value="S">
+              <label for="sizeS">S</label>
+            </div>
+            <div class="size-option">
+              <input type="radio" name="size" id="sizeM" value="M" checked>
+              <label for="sizeM">M</label>
+            </div>
+            <div class="size-option">
+              <input type="radio" name="size" id="sizeL" value="L">
+              <label for="sizeL">L</label>
+            </div>
+            <div class="size-option">
+              <input type="radio" name="size" id="sizeXL" value="XL">
+              <label for="sizeXL">XL</label>
+            </div>
+            <div class="size-option">
+              <input type="radio" name="size" id="size2XL" value="2XL">
+              <label for="size2XL">2XL</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="claimAddress">ที่อยู่สำหรับจัดส่ง *</label>
+          <textarea id="claimAddress" class="form-control" placeholder="บ้านเลขที่, ถนน, แขวง/ตำบล, เขต/อำเภอ, จังหวัด, รหัสไปรษณีย์" required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 12px; padding: 14px;">
+          ยืนยันการลงทะเบียนรับของฟรี
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

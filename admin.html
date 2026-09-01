@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ระบบหลังบ้าน (Admin Dashboard) - โครงการแจกกางเกงในฟรี</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+</head>
+<body style="background-color: #F8FAFC;">
+
+  <!-- ==========================================================================
+       1. ADMIN LOGIN OVERLAY
+       ========================================================================== -->
+  <div class="admin-login-screen" id="adminLoginScreen">
+    <div class="admin-login-box">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <img src="images/logo.svg" alt="โลโก้" style="width: 48px; height: 48px; margin: 0 auto 12px auto;">
+        <h2 style="font-size: 1.5rem; font-weight: 700; color: var(--text-dark);">ระบบหลังบ้านผู้ดูแลโครงการ</h2>
+        <p style="font-size: 0.88rem; color: var(--text-muted);">เข้าสู่ระบบเพื่อจัดการผู้รับของฟรีและข้อความ</p>
+      </div>
+
+      <form id="adminLoginForm">
+        <div class="form-group">
+          <label for="adminUser">ชื่อผู้ใช้ (Username)</label>
+          <input type="text" id="adminUser" class="form-control" placeholder="กรอกชื่อผู้ใช้" required>
+        </div>
+
+        <div class="form-group">
+          <label for="adminPass">รหัสผ่าน (Password)</label>
+          <input type="password" id="adminPass" class="form-control" placeholder="กรอกรหัสผ่าน" required>
+        </div>
+
+        <p id="loginErrorMsg" style="color: #EF4444; font-size: 0.85rem; margin-bottom: 16px; display: none;">
+          ⚠️ ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง
+        </p>
+
+        <button type="submit" class="btn-primary" style="width: 100%; padding: 12px;">
+          เข้าสู่ระบบหลังบ้าน
+        </button>
+      </form>
+      
+      <div style="text-align: center; margin-top: 16px;">
+        <a href="index.html" style="font-size: 0.85rem; color: var(--primary-blue); text-decoration: underline;">&larr; กลับไปยังหน้าหลักของเว็บไซต์</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       2. MAIN DASHBOARD VIEW
+       ========================================================================== -->
+  <div id="adminDashboardView" style="display: none;">
+    
+    <!-- Topbar -->
+    <header class="admin-topbar">
+      <div class="container admin-topbar-flex">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <img src="images/logo.svg" alt="โลโก้" style="width: 32px; height: 32px;">
+          <div>
+            <span style="font-weight: 700; font-size: 1.1rem; color: var(--text-white);">ระบบหลังบ้านผู้ดูแลโครงการ</span>
+            <span class="admin-badge" style="margin-left: 8px;">Admin Panel</span>
+          </div>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 16px;">
+          <a href="index.html" target="_blank" style="color: #94A3B8; font-size: 0.88rem;">🌐 ไปที่หน้าเว็บไซต์</a>
+          <button class="btn-secondary" id="adminLogoutBtn" style="padding: 6px 16px; font-size: 0.85rem; border-color: rgba(255,255,255,0.2); color: #FFFFFF;">
+            ออกจากระบบ
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" style="padding-top: 32px; padding-bottom: 60px;">
+      
+      <!-- Stats Summary -->
+      <div class="admin-stats-grid">
+        <div class="stat-card">
+          <div class="stat-card-title">📦 จำนวนลงทะเบียนทั้งหมด</div>
+          <div class="stat-card-value" id="statTotal">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-title" style="color: #D97706;">⏳ รอยืนยันสิทธิ์</div>
+          <div class="stat-card-value" style="color: #D97706;" id="statPending">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-title" style="color: #2563EB;">✅ อนุมัติแล้ว</div>
+          <div class="stat-card-value" style="color: #2563EB;" id="statApproved">0</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-card-title" style="color: #059669;">🚚 จัดส่งสำเร็จแล้ว</div>
+          <div class="stat-card-value" style="color: #059669;" id="statShipped">0</div>
+        </div>
+      </div>
+
+      <!-- Tab Switcher -->
+      <div class="admin-tabs">
+        <button class="admin-tab-btn active" data-target="tabClaims">📋 รายชื่อผู้ขอรับกางเกงใน</button>
+        <button class="admin-tab-btn" data-target="tabMessages">📬 ข้อความจากผู้ติดต่อ</button>
+      </div>
+
+      <!-- TAB 1: CLAIMS TABLE -->
+      <div class="admin-tab-content" id="tabClaims">
+        
+        <div class="admin-controls">
+          <div class="admin-filters">
+            <input type="text" id="searchClaimInput" class="form-control" placeholder="🔍 ค้นหาชื่อ, เบอร์โทร, ที่อยู่..." style="width: 260px;">
+            
+            <select id="filterStatus" class="form-control" style="width: 140px;">
+              <option value="all">สถานะทั้งหมด</option>
+              <option value="รอยืนยัน">รอยืนยัน</option>
+              <option value="อนุมัติแล้ว">อนุมัติแล้ว</option>
+              <option value="จัดส่งแล้ว">จัดส่งแล้ว</option>
+              <option value="ยกเลิก">ยกเลิก</option>
+            </select>
+
+            <select id="filterSize" class="form-control" style="width: 120px;">
+              <option value="all">ทุกไซส์</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+              <option value="2XL">2XL</option>
+            </select>
+          </div>
+
+          <button class="btn-primary" id="exportCsvBtn" style="padding: 10px 20px; font-size: 0.9rem;">
+            📥 ดาวน์โหลดรายงาน CSV
+          </button>
+        </div>
+
+        <div class="admin-table-card">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>รหัสรายการ</th>
+                <th>ผู้ลงทะเบียน</th>
+                <th>ไซส์</th>
+                <th>ที่อยู่จัดส่ง</th>
+                <th>สถานะ</th>
+                <th>วันที่ลงทะเบียน</th>
+                <th>จัดการสถานะ</th>
+              </tr>
+            </thead>
+            <tbody id="claimsTableBody">
+              <!-- Dynamically rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+
+      </div>
+
+      <!-- TAB 2: MESSAGES TABLE -->
+      <div class="admin-tab-content" id="tabMessages" style="display: none;">
+        <div class="admin-table-card">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>รหัส</th>
+                <th>ผู้ส่งข้อความ</th>
+                <th>หัวข้อ</th>
+                <th>ข้อความ</th>
+                <th>วันที่ส่ง</th>
+              </tr>
+            </thead>
+            <tbody id="messagesTableBody">
+              <!-- Dynamically rendered via JS -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </main>
+
+  </div>
+
+  <script src="js/app.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>
