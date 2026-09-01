@@ -22,7 +22,7 @@
 ---
 
 4. Figma Design
-- URL: `https://www.figma.com/design/b5SqKoGVmPeUlSnAVOU2JQ/finalproject?t=LjaSObPdqEwrgfI2-1` *(โปรดใส่ URL ของงานใน Figma โดยเปิดสิทธิ์เป็น Anyone with the link can view)*
+- URL: `https://www.figma.com/design/b5SqKoGVmPeUlSnAVOU2JQ/finalproject?t=LjaSObPdqEwrgfI2-1`
 
 ---
 
