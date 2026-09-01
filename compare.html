@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>เปรียบเทียบ Figma กับ เว็บไซต์จริง</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Prompt', sans-serif;
+      background-color: #030F26;
+      color: #FFFFFF;
+      width: 1920px;
+      height: 1080px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+    .header-title {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .header-title h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #FFFFFF;
+      margin-bottom: 6px;
+    }
+    .header-title p {
+      font-size: 1.1rem;
+      color: #94A3B8;
+    }
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      height: 900px;
+    }
+    .card {
+      background: #0A162D;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .badge-tag {
+      background-color: #1B6EF3;
+      color: #FFFFFF;
+      padding: 6px 16px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+    .badge-tag.green {
+      background-color: #10B981;
+    }
+    .card-body {
+      flex: 1;
+      overflow-y: auto;
+      border-radius: 8px;
+      background: #030F26;
+    }
+    .card-body img {
+      width: 100%;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="header-title">
+    <h1>การเปรียบเทียบต้นแบบ Figma / Canva กับ เว็บไซต์จริง (Visual Comparison)</h1>
+    <p>โครงการแจกกางเกงในฟรี เพื่อคนไทยทุกคน | ความสอดคล้องระดับ 1-to-1</p>
+  </div>
+
+  <div class="comparison-grid">
+    <!-- Left: Original Figma / Canva Screenshot -->
+    <div class="card">
+      <div class="card-header">
+        <h2>🎨 ต้นแบบดีไซน์ (Figma / Canva Prototype)</h2>
+        <span class="badge-tag">Figma Original</span>
+      </div>
+      <div class="card-body">
+        <img src="images/testing/figma_original.png" alt="Figma Prototype Original">
+      </div>
+    </div>
+
+    <!-- Right: Actual Live Website Screenshots -->
+    <div class="card">
+      <div class="card-header">
+        <h2>🌐 เว็บไซต์จริง (Live Website on Vercel)</h2>
+        <span class="badge-tag green">Live 1-to-1 Match</span>
+      </div>
+      <div class="card-body">
+        <img src="images/testing/live_site_top.png" alt="Live Site Top Section">
+        <img src="images/testing/live_site_bottom.png" alt="Live Site Bottom Section" style="margin-top: 10px;">
+      </div>
+    </div>
+  </div>
+</body>
+</html>

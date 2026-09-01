@@ -862,6 +862,7 @@ textarea.form-control {
   color: var(--text-light);
   padding: 50px 0 30px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
 }
 
 .footer-grid {
@@ -880,8 +881,8 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 320px;
-  flex-shrink: 0;
+  max-width: 320px;
+  width: 100%;
 }
 
 .brand-logo-stacked {
@@ -927,7 +928,8 @@ textarea.form-control {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  min-width: 160px;
+  max-width: 200px;
+  width: 100%;
 }
 
 .footer-nav h4 {
@@ -1136,8 +1138,16 @@ textarea.form-control {
 }
 
 /* ==========================================================================
-   RESPONSIVE DESIGN (DESKTOP & MOBILE)
+   RESPONSIVE DESIGN (ALL DEVICES: DESKTOP, LAPTOP, TABLET & MOBILE)
    ========================================================================== */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 100%;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
 @media (max-width: 992px) {
   .hero-grid,
   .about-grid,
@@ -1148,29 +1158,55 @@ textarea.form-control {
   }
 
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
+    gap: 28px;
   }
 
-  .feature-item:nth-child(2)::after {
-    display: none;
+  .feature-item::after {
+    display: none !important;
   }
 
   .newsletter-flex {
     flex-direction: column;
     align-items: flex-start;
+    gap: 20px;
   }
 
   .newsletter-form {
     max-width: 100%;
+    width: 100%;
   }
 
   .footer-grid {
-    grid-template-columns: 1fr;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    width: 100%;
+  }
+
+  .footer-brand {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .footer-divider {
+    width: 100%;
+    height: 1px;
+    margin: 4px 0;
+  }
+
+  .footer-nav {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -1184,22 +1220,23 @@ textarea.form-control {
   }
 
   .hero-title {
-    font-size: 2.1rem;
+    font-size: 1.9rem;
+    line-height: 1.25;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
   }
 
   .features-grid {
     grid-template-columns: 1fr;
-    gap: 28px;
-  }
-
-  .feature-item::after {
-    display: none !important;
+    gap: 24px;
   }
 
   .step-card {
     flex-direction: column;
     text-align: center;
-    padding: 28px 20px;
+    padding: 24px 20px;
   }
 
   .about-card {
@@ -1211,6 +1248,66 @@ textarea.form-control {
 
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .admin-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .admin-filters {
+    flex-wrap: wrap;
+  }
+
+  .modal-card {
+    padding: 24px 20px;
+    border-radius: var(--radius-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 1.65rem;
+  }
+
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+
+  .admin-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .newsletter-info {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .newsletter-form {
+    flex-direction: column;
+    background: transparent;
+    padding: 0;
+    gap: 10px;
+  }
+
+  .newsletter-input {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 12px 16px;
+    border-radius: var(--radius-pill);
+  }
+
+  .newsletter-btn {
+    width: 100%;
+  }
+
+  .size-selector {
+    flex-wrap: wrap;
+  }
+  
+  .size-option {
+    min-width: 55px;
   }
 }
 
